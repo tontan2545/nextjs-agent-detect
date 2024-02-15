@@ -16,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} h-screen w-screen`}>{children}</body>
+      <body
+        className={`${inter.className} h-screen w-screen flex flex-col gap-10 justify-center items-center`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

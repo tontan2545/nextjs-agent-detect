@@ -5,11 +5,11 @@ export function middleware(request: NextRequest) {
 
   const { device } = userAgent(request);
 
-  if (url.pathname === "/" && device.model === "iPhone")
-    return NextResponse.redirect(`${url.origin}/iphone`);
+  if (url.pathname === "/server" && device.model === "iPhone")
+    return NextResponse.redirect(`${url.origin}/server/iphone`);
 
-  if (url.pathname === "/iphone" && device.model !== "iPhone")
-    return NextResponse.redirect(`${url.origin}`);
+  if (url.pathname === "/server/iphone" && device.model !== "iPhone")
+    return NextResponse.redirect(`${url.origin}/server`);
 
   return NextResponse.next();
 }
